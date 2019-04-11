@@ -57,3 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 }
+/**
+ * 发送message信息，
+ * 接收message信息，然后做相应的再处理 ，通过message.what处理。
+ */
