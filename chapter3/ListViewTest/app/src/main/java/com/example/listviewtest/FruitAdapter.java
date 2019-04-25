@@ -27,6 +27,12 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         ViewHolder viewHolder;
         if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+
+//            这种写法不会报错，但是设置的dp值不会生效，因为没有parent
+            //  view =  View.inflate(getContext(),R.layout.fruit_item_dp,null);
+//            这种写法会报错，有parent，但是调用LayoutInflater.from(getContext()).inflate（）-
+//            的过程中，默认第三个三处传为了true，造成
+            //  view =  View.inflate(getContext(),R.layout.fruit_item_dp,parent);
             viewHolder = new ViewHolder();
             viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);
             viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);
